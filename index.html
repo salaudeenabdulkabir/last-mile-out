@@ -26,6 +26,16 @@
       <div class="intro-stat" aria-live="polite"><span id="coverage-value">—</span><span id="coverage-label">households covered</span></div>
     </section>
 
+    <section class="controls-panel" aria-labelledby="controls-title">
+      <div class="controls-intro"><p class="eyebrow">Run the drill</p><h2 id="controls-title">Change one condition. See who is affected.</h2><p>Try the three switches in order, or create your own combination.</p></div>
+      <div class="controls-list">
+        <button class="condition" id="bridge-control" type="button" aria-pressed="false"><span class="condition-number">01</span><span><strong>Close Canal Bridge</strong><small>Cut the only drivable crossing</small></span><span class="switch" aria-hidden="true"></span></button>
+        <button class="condition" id="access-control" type="button" aria-pressed="false"><span class="condition-number">02</span><span><strong>Add a step-free place</strong><small>At Hill School on the west bank</small></span><span class="switch" aria-hidden="true"></span></button>
+        <button class="condition" id="car-control" type="button" aria-pressed="false"><span class="condition-number">03</span><span><strong>Bring in an extra car</strong><small>Three seats on the west bank</small></span><span class="switch" aria-hidden="true"></span></button>
+      </div>
+      <button id="reset-control" class="reset-button" type="button">Reset drill</button>
+    </section>
+
     <div class="workspace-grid">
       <section class="map-panel" aria-labelledby="map-title">
         <div class="panel-heading"><div><p class="eyebrow">01 / The neighborhood</p><h2 id="map-title">Coverage map</h2></div><span class="map-count" id="map-count">Calculating…</span></div>
@@ -37,6 +47,7 @@
         <div class="panel-heading"><div><p class="eyebrow">02 / The people</p><h2 id="results-title">Household outcomes</h2></div></div>
         <p class="panel-note">Four sample households. A route counts only if transport and suitable shelter space are available.</p>
         <div id="results-list" class="results-list" aria-live="polite"></div>
+        <div id="household-detail" class="household-detail" aria-live="polite"></div>
         <div class="side-footer"><strong>Drill assumption</strong><p>Road times and people are fictional. Each vehicle makes one household trip; this is not live evacuation guidance.</p></div>
       </aside>
     </div>

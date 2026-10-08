@@ -9,7 +9,7 @@ Build mode: fast (proposed; learner can change)
 
 ## Slices
 
-- [ ] **1. Run a complete fictional neighborhood drill**
+- [x] **1. Run a complete fictional neighborhood drill**
   Becomes usable: The app opens to a fictional map, calculates viable household-to-shelter assignments, and shows every covered or uncovered household with a reason.
   Why now: This proves the core promise end to end before adding controls or polish.
   PRD ref: `prd.md > The Core Journey`, `prd.md > Assignment and reasons`
@@ -41,7 +41,7 @@ Build mode: fast (proposed; learner can change)
 
 ## Hands-on Checkpoints
 
-- [ ] Early usable behavior explored — after slice 1
+- [x] Early usable behavior explored — after slice 1 (learner: “NICE”)
 - [ ] Final kick-the-tires exploration and feedback completed
 
 ## Final Review
