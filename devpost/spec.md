@@ -24,6 +24,10 @@ The sample scenario loads in the browser → the planner changes a closure, shel
 
 Run `npm start` in this folder and open `http://localhost:4174`. Run `npm test` for calculation tests. The demo records this browser app. The submission also requires a public GitHub repository and a short public video; deployment is optional.
 
+Public repository: https://github.com/salaudeenabdulkabir/last-mile-out
+
+Public demo video: Pending learner recording and upload.
+
 ## Look and Feel
 
 Provisional direction from `prd.md > Look and Feel`: a calm operations workspace, with a legible map as the primary visual and strong status labels in addition to color. Use motion only to clarify changed paths. On mobile, controls and findings stack without losing the map or text alternatives.
