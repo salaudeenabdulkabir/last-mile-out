@@ -46,7 +46,7 @@ Build mode: fast (proposed; learner can change)
 
 ## Final Review
 
-- [ ] Final review complete — feedback resolved and learner confirms ready to ship
+- [x] Final review complete — feedback resolved and learner confirmed “ready” on 2026-10-08.
 
 ## Code Tour and App Map
 
