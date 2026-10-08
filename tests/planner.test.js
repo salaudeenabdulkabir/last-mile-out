@@ -27,6 +27,7 @@ test('making the west shelter accessible helps one household but the vehicle lim
   assert.equal(result.covered, 3);
   assert.equal(result.results.find(r => r.household.id === 'nia').covered, true);
   assert.equal(result.results.find(r => r.household.id === 'ayo').covered, false);
+  assert.match(result.results.find(r => r.household.id === 'ayo').reason, /Every vehicle that can reach/);
 });
 
 test('an extra west car closes the remaining gap without overbooking shelter or vehicles', () => {

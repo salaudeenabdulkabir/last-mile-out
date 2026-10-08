@@ -105,9 +105,15 @@ export function planScenario(scenario) {
     picks.pop();
   }
   search(0, 0, 0, 0);
+  const committedVehicles = new Set(best.picks.filter(Boolean).map(pick => pick.vehicleId).filter(Boolean));
   const results = households.map((household, index) => {
     const pick = best.picks[index];
-    if (!pick) return { household, covered: false, reason: reasonFor(scenario, household, options[index]) };
+    if (!pick) {
+      const vehiclesCommitted = household.needsRide && options[index].length > 0 && options[index].every(option => committedVehicles.has(option.vehicleId));
+      return { household, covered: false, reason: vehiclesCommitted
+        ? 'Every vehicle that can reach this household is assigned to someone else.'
+        : reasonFor(scenario, household, options[index]) };
+    }
     const shelter = scenario.shelters.find(s => s.id === pick.shelterId);
     const vehicle = pick.vehicleId ? scenario.vehicles.find(v => v.id === pick.vehicleId) : null;
     return { household, covered: true, shelter, vehicle, route: pick.route, pickup: pick.pickup ?? null, minutes: pick.minutes,

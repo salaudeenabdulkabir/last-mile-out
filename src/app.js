@@ -1,5 +1,6 @@
 import { freshScenario } from './scenario.js';
 import { planScenario } from './planner.js';
+import { createReport } from './report.js';
 
 let scenario = freshScenario();
 let selectedId = 'nia';
@@ -42,6 +43,17 @@ function detailHtml(result) {
 
 function render() {
   const plan = planScenario(scenario);
+  const bridgeClosed = !scenario.roads.find(r => r.id === 'canal-bridge').open;
+  const hillAccessible = scenario.shelters.find(s => s.id === 'hill').stepFreePlaces > 0;
+  const extraCar = scenario.vehicles.find(v => v.id === 'west-car').available;
+  const nia = plan.results.find(result => result.household.id === 'nia');
+  const ayo = plan.results.find(result => result.household.id === 'ayo');
+  let impact = 'All four households have a plan while the bridge is open. Close it to see what the west bank loses.';
+  if (bridgeClosed && !hillAccessible && !nia.covered) impact = 'The bridge is closed. Nia’s accessible van can reach her, but it cannot cross to the only shelter with a step-free place. Nia has no viable assignment.';
+  else if (bridgeClosed && hillAccessible && !extraCar && !ayo.covered) impact = 'Hill School now has a step-free place, so Nia can stay on the west bank. The west van takes her; with the bridge closed, the east car cannot reach Ayo’s family. They now need another vehicle.';
+  else if (bridgeClosed && hillAccessible && extraCar && plan.uncovered === 0) impact = 'The extra west car takes Ayo’s family while the accessible van takes Nia. Every sample household now has a viable assignment.';
+  else if (plan.uncovered) impact = `${plan.uncovered} household${plan.uncovered === 1 ? '' : 's'} still lack a viable assignment. Select an uncovered household to see the blocking condition.`;
+  document.querySelector('#impact-note').textContent = impact;
   document.querySelector('#map-stage').innerHTML = mapSvg(plan);
   document.querySelector('#results-list').innerHTML = plan.results.map(resultCard).join('');
   document.querySelector('#household-detail').innerHTML = detailHtml(plan.results.find(result => result.household.id === selectedId));
@@ -51,6 +63,7 @@ function render() {
   document.querySelector('#bridge-control').setAttribute('aria-pressed', String(!scenario.roads.find(r => r.id === 'canal-bridge').open));
   document.querySelector('#access-control').setAttribute('aria-pressed', String(scenario.shelters.find(s => s.id === 'hill').stepFreePlaces > 0));
   document.querySelector('#car-control').setAttribute('aria-pressed', String(scenario.vehicles.find(v => v.id === 'west-car').available));
+  document.querySelector('#report-preview').textContent = createReport(scenario, plan);
 }
 
 document.querySelector('#bridge-control').addEventListener('click', () => {
@@ -79,6 +92,21 @@ document.querySelector('#results-list').addEventListener('click', event => {
   selectedId = card.dataset.household;
   render();
   document.querySelector(`[data-household="${selectedId}"]`).focus();
+});
+document.querySelector('#copy-report').addEventListener('click', async () => {
+  const report = document.querySelector('#report-preview').textContent;
+  const status = document.querySelector('#copy-status');
+  try {
+    await navigator.clipboard.writeText(report);
+    status.textContent = 'Copied to clipboard';
+  } catch {
+    const range = document.createRange();
+    range.selectNodeContents(document.querySelector('#report-preview'));
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    status.textContent = 'Report selected. Press Ctrl+C to copy.';
+  }
 });
 
 render();

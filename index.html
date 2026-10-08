@@ -35,6 +35,7 @@
       </div>
       <button id="reset-control" class="reset-button" type="button">Reset drill</button>
     </section>
+    <div id="impact-note" class="impact-note" role="status" aria-live="polite"></div>
 
     <div class="workspace-grid">
       <section class="map-panel" aria-labelledby="map-title">
@@ -51,6 +52,11 @@
         <div class="side-footer"><strong>Drill assumption</strong><p>Road times and people are fictional. Each vehicle makes one household trip; this is not live evacuation guidance.</p></div>
       </aside>
     </div>
+    <section class="report-panel" aria-labelledby="report-title">
+      <div><p class="eyebrow">03 / Take it to the team</p><h2 id="report-title">Planning gap report</h2><p>A shareable snapshot of the current drill conditions, assignments, and gaps.</p></div>
+      <div class="report-actions"><button id="copy-report" type="button">Copy report</button><span id="copy-status" role="status"></span></div>
+      <pre id="report-preview" class="report-preview"></pre>
+    </section>
   </main>
   <footer class="page-footer"><span>Plan for the people a map can miss.</span><span>Fictional planning exercise · Not live directions</span></footer>
 </body>

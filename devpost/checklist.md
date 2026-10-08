@@ -19,7 +19,7 @@ Build mode: fast (proposed; learner can change)
   Learner check: Open the drill and tell me whether the first map makes the problem and household outcomes clear.
   Commit: `Build working neighborhood drill`
 
-- [ ] **2. Change the plan and reveal who is left out**
+- [x] **2. Change the plan and reveal who is left out**
   Becomes usable: Road, shelter, and vehicle controls recompute assignments immediately; selecting a household explains its result.
   Why now: This is the memorable before-and-after interaction and tests whether the simulation reacts honestly to constraints.
   PRD ref: `prd.md > Scenario controls`, `prd.md > Assignment and reasons`, `prd.md > States and Boundaries`
@@ -61,3 +61,5 @@ Reflection: Pending.
 Activity mode: Pending.
 
 ## Revisions
+
+- Learner found the handoff from Nia's route gap to Ayo's vehicle gap unclear. Added an outcome explanation beneath the controls and made the uncovered vehicle reason specific.
