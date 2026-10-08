@@ -26,7 +26,7 @@ Run `npm start` in this folder and open `http://localhost:4174`. Run `npm test` 
 
 Public repository: https://github.com/salaudeenabdulkabir/last-mile-out
 
-Public demo video: Pending learner recording and upload.
+Public demo video: https://youtu.be/e1ZbfZujpqo (37-second narrated YouTube demo).
 
 ## Look and Feel
 

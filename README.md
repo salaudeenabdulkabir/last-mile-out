@@ -33,7 +33,7 @@ The algorithm does not model traffic, multiple trips, changing conditions, dispa
 
 ## Demo outline
 
-For a video under three minutes: show the initial 4/4 plan, close the bridge (Nia uncovered), then add Hill School access. Pause here: coverage remains 3/4, but the person left out changes from Nia to Ayo. Add the west car (4/4), then copy the report and explain the need to verify real resources. The entrant should narrate and publish the video and write the final Devpost submission in their own words.
+Watch the [37-second narrated demo](https://youtu.be/e1ZbfZujpqo): the bridge closure leaves Nia uncovered; adding Hill School access keeps coverage at 3/4 but changes who is left out to Ayo; the west car brings coverage back to 4/4. The report makes the fictional assumptions and need for real-world verification clear. The entrant writes the final Devpost submission in their own words.
 
 ## License
 
