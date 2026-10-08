@@ -42,7 +42,7 @@ Build mode: fast (proposed; learner can change)
 ## Hands-on Checkpoints
 
 - [x] Early usable behavior explored — after slice 1 (learner: “NICE”)
-- [ ] Final kick-the-tires exploration and feedback completed
+- [x] Final kick-the-tires exploration and feedback completed — learner reviewed the finished open app and said “this is nice”; no further issue named.
 
 ## Final Review
 
@@ -50,15 +50,15 @@ Build mode: fast (proposed; learner can change)
 
 ## Code Tour and App Map
 
-- [ ] Learning activity complete — guided route, focused alternative, prior practice connected, or brief recap
-- [ ] Optional edit and transfer reflection addressed — offered/declined/already covered/not applicable as appropriate
-- [ ] `devpost/app-map.html` generated from finished code, checked, and shown, including a project-grounded practice to reuse
+- [x] Learning activity complete — brief evidence-based recap connected the learner's wording feedback to calculation and presentation code.
+- [x] Optional edit and transfer reflection addressed — optional edit not applicable to this concise recap; the learner's feedback already supplied the useful reflection on clarity.
+- [x] `devpost/app-map.html` generated from finished code, checked, and shown, including a project-grounded practice to reuse
 
-Activity and evidence: Pending.
-Route and stops: Pending.
-Edit outcome: Pending.
-Reflection: Pending.
-Activity mode: Pending.
+Activity and evidence: Brief recap of how “tradeoff needs clearer wording” revealed an explanation gap while the tested calculations were correct.
+Route and stops: Reference route in app-map — `src/app.js` switch and render, `src/planner.js` planScenario, `src/report.js` report generation.
+Edit outcome: Not applicable; no code edit exercise requested in the concise recap.
+Reflection: Already covered by learner feedback on the tradeoff and visible revision.
+Activity mode: Brief recap, not a guided hands-on code tour. The app-map was opened and checked in the browser and shown through Codex.
 
 ## Revisions
 
