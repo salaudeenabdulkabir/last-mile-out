@@ -29,7 +29,7 @@ Build mode: fast (proposed; learner can change)
   Learner check: Close the bridge, inspect the uncovered household, change a resource, and say whether the consequence is easy to understand.
   Commit: `Add interactive planning controls`
 
-- [ ] **3. Finish the planning report and presentation**
+- [x] **3. Finish the planning report and presentation**
   Becomes usable: The user can copy a gap report, use the app on mobile, and understand the fictional-data and estimate boundaries.
   Why now: The core calculation is stable, so presentation and export can reflect its real behavior.
   PRD ref: `prd.md > Planning output`, `prd.md > Screens and Layout`, `prd.md > Look and Feel`
