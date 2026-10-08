@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102831">
+  <meta name="description" content="A fictional neighborhood drill that reveals who an evacuation plan leaves behind.">
+  <title>Last Mile Out — evacuation planning rehearsal</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/src/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Skip to planning workspace</a>
+  <header class="masthead">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">↗</span><span>Last Mile Out</span></div>
+    <div class="masthead-right"><span class="eyebrow">Planning rehearsal</span><span class="fictional-pill">Fictional neighborhood</span></div>
+  </header>
+
+  <main id="workspace">
+    <section class="intro" aria-labelledby="intro-title">
+      <div>
+        <p class="eyebrow section-kicker">Canal Ward · Flood drill</p>
+        <h1 id="intro-title">Who does this plan leave behind?</h1>
+        <p class="lede">Test roads, transport, and shelter access before a real emergency. Every household stays visible, even when the plan cannot reach them.</p>
+      </div>
+      <div class="intro-stat" aria-live="polite"><span id="coverage-value">—</span><span id="coverage-label">households covered</span></div>
+    </section>
+
+    <div class="workspace-grid">
+      <section class="map-panel" aria-labelledby="map-title">
+        <div class="panel-heading"><div><p class="eyebrow">01 / The neighborhood</p><h2 id="map-title">Coverage map</h2></div><span class="map-count" id="map-count">Calculating…</span></div>
+        <div class="map-stage" id="map-stage"></div>
+        <div class="map-legend" aria-label="Map legend"><span><i class="legend-dot covered"></i> Covered</span><span><i class="legend-dot uncovered"></i> Uncovered</span><span><i class="legend-square shelter"></i> Shelter</span><span><i class="legend-line"></i> Open road</span></div>
+      </section>
+
+      <aside class="side-panel" aria-labelledby="results-title">
+        <div class="panel-heading"><div><p class="eyebrow">02 / The people</p><h2 id="results-title">Household outcomes</h2></div></div>
+        <p class="panel-note">Four sample households. A route counts only if transport and suitable shelter space are available.</p>
+        <div id="results-list" class="results-list" aria-live="polite"></div>
+        <div class="side-footer"><strong>Drill assumption</strong><p>Road times and people are fictional. Each vehicle makes one household trip; this is not live evacuation guidance.</p></div>
+      </aside>
+    </div>
+  </main>
+  <footer class="page-footer"><span>Plan for the people a map can miss.</span><span>Fictional planning exercise · Not live directions</span></footer>
+</body>
+</html>
