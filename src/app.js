@@ -50,7 +50,7 @@ function render() {
   const ayo = plan.results.find(result => result.household.id === 'ayo');
   let impact = 'All four households have a plan while the bridge is open. Close it to see what the west bank loses.';
   if (bridgeClosed && !hillAccessible && !nia.covered) impact = 'The bridge is closed. Nia’s accessible van can reach her, but it cannot cross to the only shelter with a step-free place. Nia has no viable assignment.';
-  else if (bridgeClosed && hillAccessible && !extraCar && !ayo.covered) impact = 'Hill School now has a step-free place, so Nia can stay on the west bank. The west van takes her; with the bridge closed, the east car cannot reach Ayo’s family. They now need another vehicle.';
+  else if (bridgeClosed && hillAccessible && !extraCar && !ayo.covered) impact = 'Still 3/4 covered—but the person left out changed. Hill School’s new step-free place lets Nia stay on the west bank. The west van takes her; the east car cannot cross the closed bridge to Ayo’s family. They now need another vehicle.';
   else if (bridgeClosed && hillAccessible && extraCar && plan.uncovered === 0) impact = 'The extra west car takes Ayo’s family while the accessible van takes Nia. Every sample household now has a viable assignment.';
   else if (plan.uncovered) impact = `${plan.uncovered} household${plan.uncovered === 1 ? '' : 's'} still lack a viable assignment. Select an uncovered household to see the blocking condition.`;
   document.querySelector('#impact-note').textContent = impact;
